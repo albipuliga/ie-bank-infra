@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "environmentType": {
+            "value": "nonprod"
+        },
+        "postgreSQLServerName": {
+            "value": "apuliga-dbsrv-uat"
+        },
+        "postgreSQLDatabaseName": {
+            "value": "apuliga-db-uat"
+        },
+        "appServicePlanName": {
+            "value": "apuliga-asp-uat"
+        },
+        "appServiceAPIAppName": {
+            "value": "apuliga-be-uat"
+        },
+        "appServiceAppName": {
+            "value": "apuliga-fe-uat"
+        },
+        "location": {
+            "value": "North Europe"
+        }
+    }
+}
