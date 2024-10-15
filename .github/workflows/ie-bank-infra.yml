@@ -1,15 +1,15 @@
 name: ie-bank-infra
 on:
-  workflow_dispatch: # This allows manual triggering
+  workflow_dispatch:
   push:
     branches:
-      - "*" # This will run on any branch
+      - "*"
     paths:
       - "**"
       - "!scripts/**"
   pull_request:
     branches:
-      - main # This will run on pull requests to main
+      - main
     paths:
       - "**"
       - "!scripts/**"
@@ -64,8 +64,8 @@ jobs:
           deploymentName: ${{ env.USER_ALIAS }}-dev
 
   deploy-uat:
-    if: github.event_name == 'pull_request' && github.base_ref == 'main' || github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    if: github.event.pull_request.base.ref == 'main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latestù
     needs: build
     environment:
       name: "UAT"
